@@ -214,5 +214,67 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "weather",
+    "fields": [
+      {
+        "component": "select",
+        "name": "baseCity",
+        "value": "bangalore",
+        "label": "City",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Chennai",
+            "value": "Chennai,IN"
+          },
+          {
+            "name": "Bangalore",
+            "value": "bangalore"
+          },
+          {
+            "name": "Delhi",
+            "value": "Delhi,IN"
+          },
+          {
+            "name": "Mumbai",
+            "value": "Mumbai,IN"
+          },
+          {
+            "name": "Kolkata",
+            "value": "Kolkata,IN"
+          },
+          {
+            "name": "Hyderabad",
+            "value": "Hyderabad,IN"
+          },
+          {
+            "name": "Pune",
+            "value": "Pune,IN"
+          },
+          {
+            "name": "Jaipur",
+            "value": "Jaipur,IN"
+          },
+          {
+            "name": "Lucknow",
+            "value": "Lucknow,IN"
+          },
+          {
+            "name": "Coimbatore",
+            "value": "Coimbatore,IN"
+          },
+          {
+            "name": "Kochi",
+            "value": "Kochi,IN"
+          },
+          {
+            "name": "Madurai",
+            "value": "Madurai,IN"
+          }
+        ]
+      }
+    ]
   }
 ]
