@@ -1,12 +1,41 @@
 /* /blocks/weather/weather.css */
+
+.weather.block {
+  padding: 1rem;
+  background: #f0f7ff;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
 .weather-card {
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #27BBF5;
-  }
-  .weather-card .temp {
-    font-size: 2em;
-    font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.weather-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.weather-card .temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #0078d4;
+}
+
+.weather-card img {
+  width: 80px;
+  height: 80px;
+}
+
+.weather-card .condition {
+  text-transform: capitalize;
+  color: #666;
+  font-style: italic;
 }
