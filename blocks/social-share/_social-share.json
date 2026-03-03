@@ -1,0 +1,40 @@
+{
+  "definitions": [
+    {
+      "title": "Social Share",
+      "id": "social-share",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Social Share",
+              "model": "social-share"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "social-share",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "site-name",
+          "label": "Site Name"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "base-url",
+          "label": "Base URL"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
+
