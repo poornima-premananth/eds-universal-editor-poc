@@ -6,20 +6,32 @@ export default function decorate(block) {
   const roleRow = rows[2];
   const dateRow = rows[3];
 
-  const picture = imageRow ? imageRow.querySelector('picture') : null;
+  const imageCell = imageRow ? imageRow.querySelector(':scope > div') : null;
+  let mediaEl = imageCell ? imageCell.querySelector('picture, img') : null;
+
   const name = nameRow ? nameRow.textContent.trim() : '';
   const role = roleRow ? roleRow.textContent.trim() : '';
   const date = dateRow ? dateRow.textContent.trim() : '';
+
+  if (!mediaEl && imageCell) {
+    const src = imageCell.textContent.trim();
+    if (src) {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = name;
+      mediaEl = img;
+    }
+  }
 
   block.innerHTML = '';
 
   const card = document.createElement('div');
   card.className = 'author-card';
 
-  if (picture) {
+  if (mediaEl) {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'author-image';
-    imageWrapper.appendChild(picture);
+    imageWrapper.appendChild(mediaEl);
     card.appendChild(imageWrapper);
   }
 
