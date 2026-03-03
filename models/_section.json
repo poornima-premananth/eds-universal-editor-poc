@@ -50,7 +50,11 @@
         "hero",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "weather",
+        "author-info",
+        "cta-banner",
+        "map"
       ]
     }
   ]
