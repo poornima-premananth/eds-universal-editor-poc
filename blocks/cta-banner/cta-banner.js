@@ -13,9 +13,9 @@ export default function decorate(block) {
     return cell ? cell.textContent.trim() : '';
   };
 
-  const title = getText(titleRow) || 'Get Started Today';
+  const title = getText(titleRow) || '';
   const text = getText(textRow) || '';
-  const buttonText = getText(buttonTextRow) || 'Learn More';
+  const buttonText = getText(buttonTextRow) || '';
 
   // Link can be an <a> or plain text URL
   const linkCell = getCell(linkRow);
