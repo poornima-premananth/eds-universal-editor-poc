@@ -364,5 +364,22 @@
         "label": "Location"
       }
     ]
+  },
+  {
+    "id": "social-share",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "site-name",
+        "label": "Site Name"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "base-url",
+        "label": "Base URL"
+      }
+    ]
   }
 ]
