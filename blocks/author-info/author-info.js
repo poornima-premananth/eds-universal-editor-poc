@@ -9,12 +9,12 @@ export default function decorate(block) {
       config[key] = value;
     }
   });  
-  const { name, role, date, image } = config;
+  const { author_name, role, date, image } = config;
   block.innerHTML = `
     <div class="author-card">
-      ${image ? `<img src="${image}" alt="${name}" />` : ''}
+      ${image ? `<img src="${image}" alt="${author_name}" />` : ''}
       <div class="author-details">
-        <h4>${name || ''}</h4>
+        <h4>${author_name || ''}</h4>
         <p>${role || ''}</p>
         <span>${date || ''}</span>
       </div>

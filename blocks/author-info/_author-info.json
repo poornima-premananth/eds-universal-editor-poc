@@ -30,7 +30,7 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "name",
+          "name": "author_name",
           "label": "Name"
         },
         {

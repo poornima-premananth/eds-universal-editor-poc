@@ -290,7 +290,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "name",
+        "name": "author-name",
         "label": "Name"
       },
       {
