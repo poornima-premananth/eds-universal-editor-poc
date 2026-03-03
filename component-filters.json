@@ -16,7 +16,10 @@
       "cards",
       "columns",
       "fragment",
-      "weather"
+      "weather",
+      "author-info",
+      "cta-banner",
+      "map"
     ]
   },
   {
