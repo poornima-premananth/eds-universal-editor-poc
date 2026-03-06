@@ -1,0 +1,85 @@
+.contact-form-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+  }
+  
+  .contact-form {
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .form-container {
+    background: #f6f9ff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  
+  .form-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a3c7c;
+    margin-bottom: 8px;
+  }
+  
+  .form-description {
+    color: #666;
+    margin-bottom: 24px;
+  }
+  
+  .contact-form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .contact-form-element input,
+  .contact-form-element textarea {
+  
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #d9e2f2;
+    font-size: 14px;
+    outline: none;
+  
+  }
+  
+  .contact-form-element textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .contact-form-element input:focus,
+  .contact-form-element textarea:focus {
+    border-color: #2f6fed;
+  }
+  
+  .contact-form-element button {
+  
+    margin-top: 8px;
+    background: linear-gradient(135deg,#2f6fed,#1f4fc0);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+  
+  }
+  
+  .contact-form-element button:hover {
+    transform: translateY(-1px);
+  }
+  
+  .form-success-message {
+  
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #e8f6ee;
+    color: #1a7f43;
+    font-weight: 500;
+  
+  }
