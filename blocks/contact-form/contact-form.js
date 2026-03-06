@@ -135,24 +135,19 @@ export default function decorate(block) {
       loading.style.display = "block";
   
       const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-  
+
       try {
-  
         await fetch(endpoint, {
           method: "POST",
-          body: new URLSearchParams(data)
+          body: formData
         });
-  
+    
         loading.style.display = "none";
         form.style.display = "none";
         success.style.display = "block";
-  
       } catch (err) {
-  
         loading.style.display = "none";
         alert("Submission failed. Please try again.");
-  
       }
   
     });
