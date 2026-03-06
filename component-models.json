@@ -448,7 +448,7 @@
       {
         "component": "text",
         "name": "endpoint",
-        "label": "Submission API Endpoint",
+        "label": "Google Script Endpoint",
         "valueType": "string"
       },
       {
@@ -463,7 +463,7 @@
         "name": "successMessage",
         "label": "Success Message",
         "valueType": "string",
-        "defaultValue": "Thank you! Your message has been sent."
+        "defaultValue": "Thank you! Our team will contact you soon."
       }
     ]
   }
