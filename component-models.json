@@ -431,7 +431,7 @@
     "fields": []
   },
   {
-    "id": "form",
+    "id": "contact-form",
     "fields": [
       {
         "component": "text",
