@@ -1,55 +1,47 @@
-.pharma-form {
-    max-width: 520px;
-    margin: auto;
-    padding: 30px;
-    background: #f7f9ff;
-    border-radius: 12px;
+.contact-form-wrapper{
+    display:flex;
+    justify-content:center;
   }
   
-  .pharma-form h2 {
-    font-size: 28px;
-    color: #1a3c7c;
+  .contact-form{
+    width:100%;
+    max-width:900px;
   }
   
-  .pharma-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+  .pharma-form{
+    background:#f6f9ff;
+    padding:40px;
+    border-radius:12px;
   }
   
-  .pharma-form input,
-  .pharma-form textarea,
-  .pharma-form select {
-  
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-  
+  .contact-form-element{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
   }
   
-  .pharma-form textarea {
-    min-height: 120px;
+  .contact-form-element textarea{
+    grid-column:1 / span 2;
   }
   
-  .pharma-form button {
-  
-    background: #2f6fed;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-  
+  .contact-form-element button{
+    grid-column:1 / span 2;
   }
   
-  .checkbox {
-    font-size: 13px;
-    display: flex;
-    gap: 8px;
+  .contact-form-element input,
+  .contact-form-element select,
+  .contact-form-element textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #dcdcdc;
+    border-radius:6px;
   }
   
-  .form-success {
-    color: green;
-    font-weight: 600;
+  .checkbox{
+    grid-column:1 / span 2;
+  }
+  
+  .form-success{
+    margin-top:20px;
+    color:#0a8f2a;
   }

@@ -8,8 +8,17 @@ export default function decorate(block) {
     const buttonText = rows[3]?.textContent.trim() || "Submit";
     const successMessage = rows[4]?.textContent.trim() || "Thank you! Our team will contact you shortly.";
   
+    const termsText = "I agree to the Terms & Conditions";
+    const termsContent = `
+      <h3>Terms & Conditions</h3>
+      <p>
+        By submitting this form you agree to allow EDS Pharma to contact you regarding
+        your healthcare inquiry. Your data will be handled securely and used only
+        for communication purposes related to your request.
+      </p>
+    `;
+  
     block.innerHTML = `
-    
     <div class="pharma-form">
   
       <h2 class="form-title">${title}</h2>
@@ -18,17 +27,17 @@ export default function decorate(block) {
       <form class="contact-form-element">
   
         <div class="form-field">
-          <input type="text" name="name" placeholder="Full Name*" required />
+          <input type="text" name="name" placeholder="Full Name*" required>
           <span class="error"></span>
         </div>
   
         <div class="form-field">
-          <input type="email" name="email" placeholder="Email Address*" required />
+          <input type="email" name="email" placeholder="Email Address*" required>
           <span class="error"></span>
         </div>
   
         <div class="form-field">
-          <input type="tel" name="phone" placeholder="Phone Number*" required />
+          <input type="tel" name="phone" placeholder="Phone Number*" required>
           <span class="error"></span>
         </div>
   
@@ -43,7 +52,7 @@ export default function decorate(block) {
           <span class="error"></span>
         </div>
   
-        <div class="form-field">
+        <div class="form-field full">
           <textarea name="message" placeholder="Your Message*" required></textarea>
           <span class="error"></span>
         </div>
@@ -55,28 +64,37 @@ export default function decorate(block) {
   
         <label class="checkbox required">
           <input type="checkbox" name="terms" required>
-          I agree to the Terms & Privacy Policy
+          ${termsText}
+          <a href="#" class="terms-link">View</a>
         </label>
   
         <button type="submit" class="submit-btn">
           ${buttonText}
         </button>
   
-        <div class="form-loading" style="display:none;">
+        <div class="form-loading" style="display:none">
           Submitting...
         </div>
   
       </form>
   
-      <div class="form-success" style="display:none;">
+      <div class="form-success" style="display:none">
         ${successMessage}
       </div>
   
+    </div>
+  
+    <div class="terms-modal" style="display:none">
+      <div class="terms-modal-content">
+        <button class="terms-close">×</button>
+        ${termsContent}
+      </div>
     </div>
     `;
   
     const form = block.querySelector("form");
     const loading = block.querySelector(".form-loading");
+    const success = block.querySelector(".form-success");
   
     function validateForm() {
   
@@ -123,24 +141,33 @@ export default function decorate(block) {
   
         await fetch(endpoint, {
           method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-            "Content-Type": "application/json"
-          }
+          body: new URLSearchParams(data)
         });
   
         loading.style.display = "none";
         form.style.display = "none";
+        success.style.display = "block";
   
-        block.querySelector(".form-success").style.display = "block";
-  
-      } catch(err) {
+      } catch (err) {
   
         loading.style.display = "none";
         alert("Submission failed. Please try again.");
   
       }
   
+    });
+  
+    const termsLink = block.querySelector(".terms-link");
+    const modal = block.querySelector(".terms-modal");
+    const closeBtn = block.querySelector(".terms-close");
+  
+    termsLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+  
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
     });
   
   }

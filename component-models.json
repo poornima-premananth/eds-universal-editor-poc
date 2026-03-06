@@ -442,28 +442,25 @@
       {
         "component": "text",
         "name": "description",
-        "label": "Form Description",
+        "label": "Description",
         "valueType": "string"
       },
       {
         "component": "text",
         "name": "endpoint",
-        "label": "Google Script Endpoint",
+        "label": "API Endpoint",
         "valueType": "string"
       },
       {
         "component": "text",
-        "name": "buttonText",
-        "label": "Submit Button Text",
-        "valueType": "string",
-        "defaultValue": "Send Message"
+        "name": "termsText",
+        "label": "Terms Label",
+        "valueType": "string"
       },
       {
-        "component": "text",
-        "name": "successMessage",
-        "label": "Success Message",
-        "valueType": "string",
-        "defaultValue": "Thank you! Our team will contact you soon."
+        "component": "richtext",
+        "name": "termsContent",
+        "label": "Terms Content"
       }
     ]
   }
