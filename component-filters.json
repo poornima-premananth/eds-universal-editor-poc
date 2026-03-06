@@ -2,7 +2,8 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "tab-section"
     ]
   },
   {
@@ -20,7 +21,15 @@
       "author-info",
       "cta-banner",
       "map",
-      "social-share"
+      "social-share",
+      "tabs",
+      "carousel"
+    ]
+  },
+  {
+    "id": "tab-section",
+    "components": [
+      "tabs"
     ]
   },
   {
