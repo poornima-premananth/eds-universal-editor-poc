@@ -9,6 +9,7 @@ export default function decorate(block) {
     const successMessage = rows[4]?.textContent.trim() || "Thank you! Our team will contact you shortly.";
   
     const termsText = "I agree to the Terms & Conditions";
+  
     const termsContent = `
       <h3>Terms & Conditions</h3>
       <p>
@@ -19,12 +20,16 @@ export default function decorate(block) {
     `;
   
     block.innerHTML = `
+    
     <div class="pharma-form">
   
       <h2 class="form-title">${title}</h2>
       <p class="form-description">${description}</p>
   
-      <form class="contact-form-element">
+      <form class="contact-form-element"
+        method="POST"
+        action="${endpoint}"
+        target="hidden_iframe">
   
         <div class="form-field">
           <input type="text" name="name" placeholder="Full Name*" required>
@@ -49,12 +54,10 @@ export default function decorate(block) {
             <option value="Distribution Partnership">Distribution Partnership</option>
             <option value="Customer Support">Customer Support</option>
           </select>
-          <span class="error"></span>
         </div>
   
         <div class="form-field full">
           <textarea name="message" placeholder="Your Message*" required></textarea>
-          <span class="error"></span>
         </div>
   
         <label class="checkbox">
@@ -81,6 +84,8 @@ export default function decorate(block) {
       <div class="form-success" style="display:none">
         ${successMessage}
       </div>
+  
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
   
     </div>
   
@@ -126,29 +131,22 @@ export default function decorate(block) {
       return valid;
     }
   
-    form.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", (e) => {
   
-      e.preventDefault();
-  
-      if (!validateForm()) return;
+      if (!validateForm()) {
+        e.preventDefault();
+        return;
+      }
   
       loading.style.display = "block";
   
-      const formData = new FormData(form);
-
-      try {
-        await fetch(endpoint, {
-          method: "POST",
-          body: formData
-        });
-    
+      setTimeout(() => {
+  
         loading.style.display = "none";
         form.style.display = "none";
         success.style.display = "block";
-      } catch (err) {
-        loading.style.display = "none";
-        alert("Submission failed. Please try again.");
-      }
+  
+      }, 1500);
   
     });
   
