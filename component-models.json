@@ -429,5 +429,42 @@
   {
     "id": "carousel",
     "fields": []
+  },
+  {
+    "id": "form",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Form Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Form Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "endpoint",
+        "label": "Submission API Endpoint",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "buttonText",
+        "label": "Submit Button Text",
+        "valueType": "string",
+        "defaultValue": "Send Message"
+      },
+      {
+        "component": "text",
+        "name": "successMessage",
+        "label": "Success Message",
+        "valueType": "string",
+        "defaultValue": "Thank you! Your message has been sent."
+      }
+    ]
   }
 ]
