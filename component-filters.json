@@ -33,6 +33,19 @@
     ]
   },
   {
+    "id": "tabs",
+    "components": [
+      "tab"
+    ]
+  },
+  {
+    "id": "tab",
+    "components": [
+      "image",
+      "author-info"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
