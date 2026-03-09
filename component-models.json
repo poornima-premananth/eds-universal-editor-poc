@@ -406,25 +406,18 @@
   },
   {
     "id": "tabs",
-    "fields": []
-  },
-  {
-    "id": "tab",
     "fields": [
       {
         "component": "text",
         "valueType": "string",
-        "name": "tabLabel",
-        "label": "Tab Label"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
+        "name": "title",
+        "label": "Tabs Title"
       }
     ]
+  },
+  {
+    "id": "tab",
+    "fields": []
   },
   {
     "id": "carousel",

@@ -74,20 +74,20 @@
                 }
               }
             }
-        }
-      },
-      {
-        "title": "Tab Section",
-        "id": "tab-section",
-        "plugins": {
-          "xwalk": {
-            "page": {
-              "resourceType": "core/franklin/components/section/v1/section",
-              "template": {
-                "model": "tab-section"
+          }
+        },
+        {
+          "title": "Tab Section",
+          "id": "tab-section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "tab-section"
+                }
               }
             }
-          }
           }
         }
       ]
@@ -256,6 +256,21 @@
                 "template": {
                   "name": "Tabs",
                   "model": "tabs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tab",
+          "id": "tab",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Tab",
+                  "model": "tab"
                 }
               }
             }
