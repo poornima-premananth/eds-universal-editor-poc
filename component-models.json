@@ -517,8 +517,7 @@
         "label": "Button Label"
       },
       {
-        "component": "link",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "buttonLink",
         "label": "Button Link"
       },

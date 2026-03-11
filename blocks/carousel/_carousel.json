@@ -16,7 +16,7 @@
       }
     },
     {
-      "title": "Carousel Cards",
+      "title": "Carousel Card",
       "id": "carousel-cards",
       "plugins": {
         "xwalk": {
@@ -85,8 +85,7 @@
           "label": "Button Label"
         },
         {
-          "component": "link",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "buttonLink",
           "label": "Button Link"
         },
