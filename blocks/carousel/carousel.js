@@ -13,10 +13,11 @@ export default function decorate(block) {
   ----------------------------- */
 
   const getCellText = (el) => (el?.textContent?.trim() ?? '');
-  const applyButtonClass = (linkCell) => {
+  const applyButtonClass = (linkCell, label) => {
     const a = linkCell?.querySelector('a');
     if (a) {
       a.classList.add('carousel-button');
+      a.textContent = label || a.textContent || 'CTA Button';
     }
   };
 
@@ -55,7 +56,7 @@ export default function decorate(block) {
           if (c === buttonLabelCell) c.classList.add('carousel-label');
           if (c === buttonLinkCell) {
             c.classList.add('carousel-link');
-            applyButtonClass(c);
+            applyButtonClass(c, buttonLabel);
           }
           if (c === styleCell) c.classList.add('carousel-button-style');
           overlay.appendChild(c);
