@@ -332,29 +332,38 @@
     "id": "author-info",
     "fields": [
       {
-        "component": "reference",
+        "component": "container",
+        "name": "authors",
+        "label": "Authors Info",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "author-name",
-        "label": "Name"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "role",
-        "label": "Role"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
+        "multi": true,
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Image",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "author-name",
+            "label": "Name"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "role",
+            "label": "Role"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "date",
+            "label": "Date"
+          }
+        ]
       }
     ]
   },
