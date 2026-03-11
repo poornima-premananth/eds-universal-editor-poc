@@ -406,6 +406,18 @@
     ]
   },
   {
+    "id": "product-listing",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "folder",
+        "label": "Folder",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "map",
     "fields": [
       {
