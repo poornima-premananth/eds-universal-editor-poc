@@ -21,10 +21,9 @@
       "id": "product-listing",
       "fields": [
         {
-          "component": "reference",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "folder",
-          "label": "Folder"
+          "label": "CF Folder"
         }
       ]
     }
