@@ -234,6 +234,35 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "button-text",
+        "label": "Button Text"
+      },
+      {
+        "component": "link",
+        "valueType": "string",
+        "name": "buttonLink",
+        "label": "Button Link"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "theme",
+        "label": "Theme",
+        "value": "primary",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
       }
     ]
   },
@@ -437,6 +466,10 @@
   },
   {
     "id": "carousel",
+    "fields": []
+  },
+  {
+    "id": "carousel-cards",
     "fields": [
       {
         "component": "container",
@@ -490,7 +523,7 @@
             "label": "Button Label"
           },
           {
-            "component": "text",
+            "component": "link",
             "valueType": "string",
             "name": "buttonLink",
             "label": "Button Link"

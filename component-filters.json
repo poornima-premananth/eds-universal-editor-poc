@@ -40,6 +40,12 @@
     ]
   },
   {
+    "id": "carousel",
+    "components": [
+      "carousel-cards"
+    ]
+  },
+  {
     "id": "tab",
     "components": [
       "image",
