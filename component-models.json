@@ -439,70 +439,78 @@
     "id": "carousel",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "alignment",
-        "label": "Card Alignment",
-        "value": "center",
-        "options": [
+        "component": "container",
+        "name": "cards",
+        "label": "Carousel Cards",
+        "multi": true,
+        "fields": [
           {
-            "name": "Left",
-            "value": "left"
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Image"
           },
           {
-            "name": "Center",
-            "value": "center"
+            "component": "select",
+            "valueType": "string",
+            "name": "alignment",
+            "label": "Card Alignment",
+            "value": "center",
+            "options": [
+              {
+                "name": "Left",
+                "value": "left"
+              },
+              {
+                "name": "Center",
+                "value": "center"
+              },
+              {
+                "name": "Right",
+                "value": "right"
+              }
+            ]
           },
           {
-            "name": "Right",
-            "value": "right"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Card Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Card Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "buttonLabel",
-        "label": "Button Label"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "buttonLink",
-        "label": "Button Link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "buttonStyle",
-        "label": "Button Style",
-        "value": "primary",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "primary"
+            "component": "text",
+            "valueType": "string",
+            "name": "title",
+            "label": "Card Title"
           },
           {
-            "name": "Secondary",
-            "value": "secondary"
+            "component": "richtext",
+            "valueType": "string",
+            "name": "description",
+            "label": "Card Description"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "buttonLabel",
+            "label": "Button Label"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "buttonLink",
+            "label": "Button Link"
+          },
+          {
+            "component": "select",
+            "valueType": "string",
+            "name": "buttonStyle",
+            "label": "Button Style",
+            "value": "primary",
+            "options": [
+              {
+                "name": "Primary",
+                "value": "primary"
+              },
+              {
+                "name": "Secondary",
+                "value": "secondary"
+              }
+            ]
           }
         ]
       }
