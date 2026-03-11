@@ -97,6 +97,40 @@
 }
 
 /* =========================
+   Overlay cells (preserve UE bindings)
+========================= */
+
+/* Hidden cells: keep in DOM for UE, hide visually */
+.carousel-overlay .carousel-alignment,
+.carousel-overlay .carousel-button-style {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.carousel-overlay .carousel-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.carousel-overlay .carousel-desc {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.carousel-overlay .carousel-label:empty {
+  display: none;
+}
+
+/* =========================
    Typography
 ========================= */
 
