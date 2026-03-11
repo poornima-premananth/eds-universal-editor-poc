@@ -505,6 +505,39 @@
             "value": "secondary"
           }
         ]
+    "fields": []
+  },
+  {
+    "id": "contact-form",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Form Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "endpoint",
+        "label": "API Endpoint",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "termsText",
+        "label": "Terms Label",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "termsContent",
+        "label": "Terms Content"
       }
     ]
   }

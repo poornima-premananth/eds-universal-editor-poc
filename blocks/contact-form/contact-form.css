@@ -1,0 +1,47 @@
+.contact-form-wrapper{
+    display:flex;
+    justify-content:center;
+  }
+  
+  .contact-form{
+    width:100%;
+    max-width:900px;
+  }
+  
+  .pharma-form{
+    background:#f6f9ff;
+    padding:40px;
+    border-radius:12px;
+  }
+  
+  .contact-form-element{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  
+  .contact-form-element textarea{
+    grid-column:1 / span 2;
+  }
+  
+  .contact-form-element button{
+    grid-column:1 / span 2;
+  }
+  
+  .contact-form-element input,
+  .contact-form-element select,
+  .contact-form-element textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #dcdcdc;
+    border-radius:6px;
+  }
+  
+  .checkbox{
+    grid-column:1 / span 2;
+  }
+  
+  .form-success{
+    margin-top:20px;
+    color:#0a8f2a;
+  }
