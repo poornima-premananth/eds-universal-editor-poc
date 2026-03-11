@@ -409,11 +409,9 @@
     "id": "product-listing",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "folder",
-        "label": "Folder",
-        "multi": false
+        "label": "Folder"
       }
     ]
   },
