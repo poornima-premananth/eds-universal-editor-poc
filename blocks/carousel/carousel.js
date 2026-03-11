@@ -47,31 +47,34 @@ export default function decorate(block) {
     const styleRaw = getCellText(styleCell).toLowerCase();
     const buttonStyle = (styleRaw === 'secondary' ? 'secondary' : 'primary');
 
-    const overlay = document.createElement('div');
-    overlay.className = `carousel-overlay overlay-${alignment}`;
+    const hasDetails = !!(title || description || buttonLabel || (buttonHref && buttonHref !== '#'));
+    if (hasDetails) {
+      const overlay = document.createElement('div');
+      overlay.className = `carousel-overlay overlay-${alignment}`;
 
-    if (title) {
-      const h = document.createElement('h2');
-      h.textContent = title;
-      overlay.appendChild(h);
-    }
-    if (description) {
-      const p = document.createElement('p');
-      p.textContent = description;
-      overlay.appendChild(p);
-    }
-    if (buttonLabel || buttonHref !== '#') {
-      const a = document.createElement('a');
-      a.href = buttonHref;
-      a.textContent = linkText || buttonLabel || 'Learn more';
-      a.className = `carousel-button ${buttonStyle}`;
-      overlay.appendChild(a);
-    }
+      if (title) {
+        const h = document.createElement('h2');
+        h.textContent = title;
+        overlay.appendChild(h);
+      }
+      if (description) {
+        const p = document.createElement('p');
+        p.textContent = description;
+        overlay.appendChild(p);
+      }
+      if (buttonLabel || buttonHref !== '#') {
+        const a = document.createElement('a');
+        a.href = buttonHref;
+        a.textContent = linkText || buttonLabel || 'Learn more';
+        a.className = `carousel-button ${buttonStyle}`;
+        overlay.appendChild(a);
+      }
 
-    slide.appendChild(overlay);
+      slide.appendChild(overlay);
+    }
 
     [alignmentCell, titleCell, descCell, buttonLabelCell, buttonLinkCell, styleCell].forEach((c) => {
-      if (c && c.parentNode) c.remove();
+      if (c?.parentNode) c.remove();
     });
   });
 
@@ -79,11 +82,21 @@ export default function decorate(block) {
      Infinite Loop Setup
   ----------------------------- */
 
+  const stripEditorAttrs = (el) => {
+    [...el.querySelectorAll('[data-aue-resource], [data-aue-id], [data-aue-behavior], [data-richtext-resource], [data-richtext-prop], [data-richtext-filter], [data-richtext-label]')]
+      .concat(el.matches('[data-aue-resource], [data-aue-id], [data-aue-behavior], [data-richtext-resource], [data-richtext-prop], [data-richtext-filter], [data-richtext-label]') ? [el] : [])
+      .forEach((node) => {
+        ['data-aue-resource', 'data-aue-id', 'data-aue-behavior', 'data-richtext-resource', 'data-richtext-prop', 'data-richtext-filter', 'data-richtext-label'].forEach((attr) => node.removeAttribute(attr));
+      });
+  };
+
   const firstClone = originalSlides[0].cloneNode(true);
   const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
 
-  firstClone.classList.add('clone');
-  lastClone.classList.add('clone');
+  [firstClone, lastClone].forEach((clone) => {
+    clone.classList.add('clone');
+    stripEditorAttrs(clone);
+  });
 
   track.append(lastClone);
   originalSlides.forEach((slide) => track.append(slide));
