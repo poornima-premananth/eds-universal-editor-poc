@@ -24,7 +24,6 @@
           "component": "container",
           "name": "authors",
           "label": "Authors Info",
-          "valueType": "string",
           "multi": true,
           "fields": [
             {
