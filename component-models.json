@@ -520,23 +520,6 @@
         "component": "aem-content",
         "name": "buttonLink",
         "label": "Button Link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "buttonStyle",
-        "label": "Button Style",
-        "value": "primary",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          }
-        ]
       }
     ]
   },

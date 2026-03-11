@@ -12,21 +12,20 @@ export default function decorate(block) {
      Prepare Slides (overlay logic)
   ----------------------------- */
 
-  const getCellText = (el) => (el && el.textContent ? el.textContent.trim() : '');
-  const getCellLink = (el) => {
-    if (!el) return { href: '#', text: '' };
-    const a = el.querySelector('a');
+  const getCellText = (el) => (el?.textContent?.trim() ?? '');
+  const applyLinkAndStyle = (linkCell, styleCell) => {
+    const styleRaw = getCellText(styleCell).toLowerCase();
+    const buttonStyle = styleRaw === 'secondary' ? 'secondary' : 'primary';
+    const a = linkCell?.querySelector('a');
     if (a) {
-      return { href: a.getAttribute('href') || '#', text: a.textContent.trim() || getCellText(el) };
+      a.classList.add('carousel-button', buttonStyle);
     }
-    return { href: getCellText(el) || '#', text: '' };
   };
 
   originalSlides.forEach((slide) => {
     slide.classList.add('carousel-slide');
 
     const cells = [...slide.children];
-    const imageCell = cells[0];
     const alignmentCell = cells[1];
     const titleCell = cells[2];
     const descCell = cells[3];
@@ -38,44 +37,38 @@ export default function decorate(block) {
     let alignment = 'left';
     if (alignmentRaw === 'center') alignment = 'center';
     else if (alignmentRaw === 'right') alignment = 'right';
-    else if (alignmentRaw === 'left') alignment = 'left';
 
     const title = getCellText(titleCell);
     const description = getCellText(descCell);
     const buttonLabel = getCellText(buttonLabelCell);
-    const { href: buttonHref, text: linkText } = getCellLink(buttonLinkCell);
-    const styleRaw = getCellText(styleCell).toLowerCase();
-    const buttonStyle = (styleRaw === 'secondary' ? 'secondary' : 'primary');
+    const hasLink = buttonLinkCell?.querySelector('a') || getCellText(buttonLinkCell);
+    const hasDetails = !!(title || description || buttonLabel || hasLink);
 
-    const hasDetails = !!(title || description || buttonLabel || (buttonHref && buttonHref !== '#'));
     if (hasDetails) {
       const overlay = document.createElement('div');
       overlay.className = `carousel-overlay overlay-${alignment}`;
 
-      if (title) {
-        const h = document.createElement('h2');
-        h.textContent = title;
-        overlay.appendChild(h);
-      }
-      if (description) {
-        const p = document.createElement('p');
-        p.textContent = description;
-        overlay.appendChild(p);
-      }
-      if (buttonLabel || buttonHref !== '#') {
-        const a = document.createElement('a');
-        a.href = buttonHref;
-        a.textContent = linkText || buttonLabel || 'Learn more';
-        a.className = `carousel-button ${buttonStyle}`;
-        overlay.appendChild(a);
-      }
-
+      [alignmentCell, titleCell, descCell, buttonLabelCell, buttonLinkCell, styleCell].forEach((c) => {
+        if (c?.parentNode) {
+          c.classList.add('carousel-overlay-cell');
+          if (c === alignmentCell) c.classList.add('carousel-alignment');
+          if (c === titleCell) c.classList.add('carousel-title');
+          if (c === descCell) c.classList.add('carousel-desc');
+          if (c === buttonLabelCell) c.classList.add('carousel-label');
+          if (c === buttonLinkCell) {
+            c.classList.add('carousel-link');
+            applyLinkAndStyle(c, styleCell);
+          }
+          if (c === styleCell) c.classList.add('carousel-button-style');
+          overlay.appendChild(c);
+        }
+      });
       slide.appendChild(overlay);
+    } else {
+      [alignmentCell, titleCell, descCell, buttonLabelCell, buttonLinkCell, styleCell].forEach((c) => {
+        if (c?.parentNode) c.remove();
+      });
     }
-
-    [alignmentCell, titleCell, descCell, buttonLabelCell, buttonLinkCell, styleCell].forEach((c) => {
-      if (c?.parentNode) c.remove();
-    });
   });
 
   /* ----------------------------
@@ -83,11 +76,14 @@ export default function decorate(block) {
   ----------------------------- */
 
   const stripEditorAttrs = (el) => {
-    [...el.querySelectorAll('[data-aue-resource], [data-aue-id], [data-aue-behavior], [data-richtext-resource], [data-richtext-prop], [data-richtext-filter], [data-richtext-label]')]
-      .concat(el.matches('[data-aue-resource], [data-aue-id], [data-aue-behavior], [data-richtext-resource], [data-richtext-prop], [data-richtext-filter], [data-richtext-label]') ? [el] : [])
-      .forEach((node) => {
-        ['data-aue-resource', 'data-aue-id', 'data-aue-behavior', 'data-richtext-resource', 'data-richtext-prop', 'data-richtext-filter', 'data-richtext-label'].forEach((attr) => node.removeAttribute(attr));
+    const nodes = [el, ...el.querySelectorAll('*')];
+    nodes.forEach((node) => {
+      [...node.attributes].forEach((attr) => {
+        if (attr.name.startsWith('data-aue-') || attr.name.startsWith('data-richtext-')) {
+          node.removeAttribute(attr.name);
+        }
       });
+    });
   };
 
   const firstClone = originalSlides[0].cloneNode(true);
