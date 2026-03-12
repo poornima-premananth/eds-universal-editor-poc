@@ -42,8 +42,8 @@
         {
           "component": "richtext",
           "valueType": "string",
-          "name": "content",
-          "label": "Content"
+          "name": "accordionContent",
+          "label": "Accordion Content"
         }
       ]
     }
