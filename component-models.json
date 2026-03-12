@@ -479,6 +479,14 @@
     "fields": []
   },
   {
+    "id": "accordion",
+    "fields": []
+  },
+  {
+    "id": "accordion-item",
+    "fields": []
+  },
+  {
     "id": "carousel-cards",
     "fields": [
       {
