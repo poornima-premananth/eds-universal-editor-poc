@@ -12,12 +12,7 @@
 ========================= */
 
 .accordion-item {
-  border-bottom: 1px solid var(--text-color, #333);
   overflow: hidden;
-}
-
-.accordion-item:first-child {
-  border-top: 1px solid var(--text-color, #333);
 }
 
 /* =========================
@@ -30,7 +25,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 1.5rem;
-  background: transparent;
+  background-color: #d6ecff;
   border: none;
   text-align: left;
   cursor: pointer;
@@ -42,7 +37,10 @@
   position: relative;
 }
 
-/* Closed accordions have no background color, even on hover */
+/* Change to lighter color on hover */
+.accordion-header:hover {
+  background-color: #e8f4ff;
+}
 
 .accordion-header:focus {
   outline: 2px solid var(--link-color, #0066cc);
@@ -55,7 +53,6 @@
 
 /* Opened accordion styling */
 .accordion-item.is-open .accordion-header {
-  background-color: #d6ecff;
   color: var(--text-color, #333);
 }
 
