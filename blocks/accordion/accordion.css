@@ -42,6 +42,23 @@
   background-color: #e8f4ff;
 }
 
+/* Ensure closed accordions always keep light blue background */
+.accordion-item:not(.is-open) .accordion-header {
+  background-color: #d6ecff !important;
+}
+
+.accordion-item:not(.is-open) .accordion-header:hover {
+  background-color: #e8f4ff !important;
+}
+
+.accordion-item:not(.is-open) .accordion-header:focus {
+  background-color: #d6ecff !important;
+}
+
+.accordion-item:not(.is-open) .accordion-header:active {
+  background-color: #d6ecff !important;
+}
+
 .accordion-header:focus {
   outline: 2px solid var(--link-color, #0066cc);
   outline-offset: -2px;
