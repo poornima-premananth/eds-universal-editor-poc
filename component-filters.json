@@ -54,12 +54,6 @@
     ]
   },
   {
-    "id": "accordion-item",
-    "components": [
-      "text"
-    ]
-  },
-  {
     "id": "tab",
     "components": [
       "image",
