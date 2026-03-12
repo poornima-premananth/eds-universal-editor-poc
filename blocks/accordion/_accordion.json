@@ -38,7 +38,14 @@
     },
     {
       "id": "accordion-item",
-      "fields": []
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "content",
+          "label": "Content"
+        }
+      ]
     }
   ],
   "filters": [
