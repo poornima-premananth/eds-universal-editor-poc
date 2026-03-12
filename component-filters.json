@@ -25,6 +25,7 @@
       "social-share",
       "tabs",
       "carousel",
+      "accordion",
       "contact-form"
     ]
   },
@@ -44,6 +45,12 @@
     "id": "carousel",
     "components": [
       "carousel-cards"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "text"
     ]
   },
   {
