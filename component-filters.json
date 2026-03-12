@@ -2,8 +2,7 @@
   {
     "id": "main",
     "components": [
-      "section",
-      "tab-section"
+      "section"
     ]
   },
   {
@@ -15,30 +14,30 @@
       "title",
       "hero",
       "cards",
+      "contact-form",
+      "logo-cards",
       "columns",
       "fragment",
       "weather",
       "author-info",
       "cta-banner",
-      "product-listing",
       "map",
       "social-share",
       "tabs",
       "carousel",
-      "accordion",
-      "contact-form"
+      "accordion"
     ]
   },
   {
-    "id": "tab-section",
+    "id": "cards",
     "components": [
-      "tabs"
+      "card"
     ]
   },
   {
-    "id": "tabs",
+    "id": "logo-cards",
     "components": [
-      "tab"
+      "logo-card"
     ]
   },
   {
@@ -51,19 +50,6 @@
     "id": "accordion",
     "components": [
       "accordion-item"
-    ]
-  },
-  {
-    "id": "tab",
-    "components": [
-      "image",
-      "author-info"
-    ]
-  },
-  {
-    "id": "cards",
-    "components": [
-      "card"
     ]
   },
   {
