@@ -42,9 +42,7 @@
   position: relative;
 }
 
-.accordion-header:hover {
-  background-color: rgba(0, 0, 0, 0.03);
-}
+/* Closed accordions have no background color, even on hover */
 
 .accordion-header:focus {
   outline: 2px solid var(--link-color, #0066cc);
@@ -53,6 +51,12 @@
 
 .accordion-header:focus:not(:focus-visible) {
   outline: none;
+}
+
+/* Opened accordion styling */
+.accordion-item.is-open .accordion-header {
+  background-color: #d6ecff;
+  color: var(--text-color, #333);
 }
 
 /* =========================
@@ -96,10 +100,7 @@
   opacity: 0;
 }
 
-.accordion-header:hover .accordion-icon::before,
-.accordion-header:hover .accordion-icon::after {
-  background-color: var(--link-color, #0066cc);
-}
+/* Icon color remains default for closed accordions */
 
 /* =========================
    Accordion Content
